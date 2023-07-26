@@ -11,12 +11,16 @@ public class HelloController {
     @ResponseBody
     public String printHello() {
         return "Hello World";
+        // cautam in browser: printHello
+        // response: Hello World
     }
 
     @GetMapping(value = "/printParam")
     @ResponseBody
     public String printParam(@RequestParam("username") String name) {
         return "Hello " + name;
+        // cautam in browser printParam?username=Ana
+        // response: Hello Ana
     }
 
     // path variable
@@ -24,6 +28,8 @@ public class HelloController {
     @ResponseBody
     public String printPathVariable(@PathVariable String country) {
         return "Site country " + country;
+        // cautam in browser printPathValue/fr/index
+        // response: Sitecountry fr
     }
 
 }

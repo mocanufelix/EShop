@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <title>EShop</title>
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/bootstrap/css/bootstrap.min.css}">
+
+</head>
+<body>
+<!--header section-->
+<section>
+    <ul>
+        <li><a href="Oua.html">Oua</a></li>
+        <li><a href="CongelatePui.html">Congelate de pui</a></li>
+        <li><a href="ProduseAlimentare">Produse alimentare</a></li>
+        <li><a href="Tigari.html">Tigari</a></li>
+
+    </ul>
+</section>
+
+<!--main-->
+<h1>SC INTERHART PROD SRL</h1>
+<P>Magazin specializat in vanzarea de oua, cu o traditie inca din 1995, va oferim oua de la<br>
+    gaini crescute la sol, produse congelate din pui si curcan cat si produse alimentare de<br>
+    calitate la cele mai mici preturi</P>
+<!--footer-->
+
+<span th:text="${greetings}"/>
+
+<div class="col-6">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>departmentName</td>
+                <td>productCategory</td>
+                <td>productName</td>
+                <td>weight</td>
+                <td>price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="products : ${productsList}">
+                <td th:text="${products.id}"/>
+                <td th:text="${products.departmentName}"/>
+                <td th:text="${products.productCategory}"/>
+                <td th:text="${products.productName}"/>
+                <td th:text="${products.weight}"/>
+                <td th:text="${products.price}"/>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<div th:each="products : ${productsNameList}">
+    <span th:text="${products}"/>
+<!--    <span th:text="${products.departmentName}"/>-->
+<!--    <span th:text="${products.productCategory}"/>-->
+<!--    <span th:text="${products.productName}"/>-->
+<!--    <span th:text="${products.weight}"/>-->
+<!--    <span th:text="${products.price}"/>-->
+</div>
+
+</body>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</html>
